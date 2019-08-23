@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qzkj.demo.mapper.NetworkInfoMapper" >
+
+
+    <insert id="addNetworkInfo" parameterType="com.qzkj.demo.pojo.NetworkInfo">
+      insert into networkinfo(code,cellId,ci,eNB,earfcn,pci,rsrp,rsrq,sinr,tac,type)
+      values (#{code},#{cellId},#{ci},#{eNB},#{earfcn},#{pci},#{rsrp},#{rsrq},#{sinr},#{tac},#{type})
+    </insert>
+
+</mapper>

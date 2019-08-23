@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qzkj.demo.mapper.RecentLteMapper" >
+
+
+    <insert id="addRecentLte" parameterType="com.qzkj.demo.pojo.RecentLte">
+      insert into recentlte(code,cellId,eNB,pci,rsrp,sinr,tac,time)
+      values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.code},
+            #{item.cellId},
+            #{item.eNB},
+            #{item.pci},
+            #{item.rsrp},
+            #{item.sinr},
+            #{item.tac},
+            #{item.time}
+            )
+        </foreach>
+    </insert>
+
+</mapper>
