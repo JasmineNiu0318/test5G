@@ -104,15 +104,13 @@ public class UseController {
     }
 
     @RequestMapping(value = {"/PhoneInformation/ftpUploadTest"},method = RequestMethod.POST)
-    public ResponseCode upLoad(HttpServletRequest request,FtpUpLoad ftpUpLoad){
+    public ResponseCode upLoad(HttpServletRequest request){
 //        FtpUpLoad ftpUpLoad = new FtpUpLoad();
 //        String param = getParm(request);
 //        JSONObject jObject = JSON.parseObject(param);
 //        ftpUpLoad  = JSON.parseObject(jObject.getString("FtpUploadBean"), FtpUpLoad.class);
-        int add = ftpUpLoadService.addUpLoad(ftpUpLoad);
-        if (add == 1){
-            return ResponseCode.OK();
-        }
+        //从request获取参数信息
+        String param = getParm(request);
         return ResponseCode.UNKNOWNERROR();
     }
 
@@ -122,6 +120,7 @@ public class UseController {
 //        String param = getParm(request);
 //        JSONObject jObject = JSON.parseObject(param);
 //        ftpDownLoad = JSON.parseObject(jObject.getString("FtpDownloadBean"),FtpDownLoad.class);
+        String param = getParm(request);
         int add = ftpDownLoadService.addDownLoad(ftpDownLoad);
         if (add == 1){
             return ResponseCode.OK();
