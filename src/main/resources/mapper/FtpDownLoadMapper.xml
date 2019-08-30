@@ -3,8 +3,8 @@
 <mapper namespace="com.qzkj.demo.mapper.FtpDownLoadMapper">
 
     <insert id="addDownLoad" parameterType="com.qzkj.demo.pojo.FtpDownLoad">
-      insert into ftpdownloadbean(state,avgSpeed,progress,maxSpeed,currServer)
-      values (#{state},#{avgSpeed},#{progress},#{maxSpeed},#{currServer})
+      insert into ftpdownloadbean(eNB,avgSpeed,maxSpeed,testTime)
+      values (#{eNB},#{avgSpeed},#{maxSpeed},#{testTime})
     </insert>
 
 </mapper>
