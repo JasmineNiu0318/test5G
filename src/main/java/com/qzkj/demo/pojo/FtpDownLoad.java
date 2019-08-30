@@ -2,19 +2,17 @@ package com.qzkj.demo.pojo;
 
 public class FtpDownLoad {
     Integer id;
-    Integer state;
-    Integer progress;
+    String eNB;
     String avgSpeed;
     String maxSpeed;
-    String currServer;
+    String testTime;
 
-    public FtpDownLoad(Integer id, Integer state, Integer progress, String avgSpeed, String maxSpeed, String currServer) {
+    public FtpDownLoad(Integer id, String eNB, String avgSpeed, String maxSpeed, String testTime) {
         this.id = id;
-        this.state = state;
-        this.progress = progress;
+        this.eNB = eNB;
         this.avgSpeed = avgSpeed;
         this.maxSpeed = maxSpeed;
-        this.currServer = currServer;
+        this.testTime = testTime;
     }
 
     public FtpDownLoad() {
@@ -28,20 +26,12 @@ public class FtpDownLoad {
         this.id = id;
     }
 
-    public Integer getState() {
-        return state;
+    public String geteNB() {
+        return eNB;
     }
 
-    public void setState(Integer state) {
-        this.state = state;
-    }
-
-    public Integer getProgress() {
-        return progress;
-    }
-
-    public void setProgress(Integer progress) {
-        this.progress = progress;
+    public void seteNB(String eNB) {
+        this.eNB = eNB;
     }
 
     public String getAvgSpeed() {
@@ -60,11 +50,11 @@ public class FtpDownLoad {
         this.maxSpeed = maxSpeed;
     }
 
-    public String getCurrServer() {
-        return currServer;
+    public String getTestTime() {
+        return testTime;
     }
 
-    public void setCurrServer(String currServer) {
-        this.currServer = currServer;
+    public void setTestTime(String testTime) {
+        this.testTime = testTime;
     }
 }

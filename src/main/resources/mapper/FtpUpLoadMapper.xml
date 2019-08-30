@@ -3,8 +3,8 @@
 <mapper namespace="com.qzkj.demo.mapper.FtpUpLoadMapper">
 
     <insert id="addUpLoad" parameterType="com.qzkj.demo.pojo.FtpUpLoad">
-      insert into ftpuploadbean(state,avgSpeed,progress,maxSpeed,currServer)
-      values (#{state},#{avgSpeed},#{progress},#{maxSpeed},#{currServer})
+      insert into ftpuploadbean(eNB,avgSpeed,maxSpeed,testTime)
+      values (#{eNB},#{avgSpeed},#{maxSpeed},#{testTime})
     </insert>
 
 </mapper>
