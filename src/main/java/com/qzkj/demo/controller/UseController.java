@@ -105,22 +105,22 @@ public class UseController {
 
     @RequestMapping(value = {"/PhoneInformation/ftpUploadTest"},method = RequestMethod.POST)
     public ResponseCode upLoad(HttpServletRequest request){
-//        FtpUpLoad ftpUpLoad = new FtpUpLoad();
-//        String param = getParm(request);
-//        JSONObject jObject = JSON.parseObject(param);
-//        ftpUpLoad  = JSON.parseObject(jObject.getString("FtpUploadBean"), FtpUpLoad.class);
+        FtpUpLoad ftpUpLoad = new FtpUpLoad();
         //从request获取参数信息
         String param = getParm(request);
+        ftpUpLoad  = JSON.parseObject(param, FtpUpLoad.class);
+        int add = ftpUpLoadService.addUpLoad(ftpUpLoad);
+        if (add == 1){
+            return ResponseCode.OK();
+        }
         return ResponseCode.UNKNOWNERROR();
     }
 
     @RequestMapping(value = {"/PhoneInformation/ftpDownloadTest"},method = RequestMethod.POST)
-    public ResponseCode downLoad(HttpServletRequest request,FtpDownLoad ftpDownLoad){
-//        FtpDownLoad ftpDownLoad = new FtpDownLoad();
-//        String param = getParm(request);
-//        JSONObject jObject = JSON.parseObject(param);
-//        ftpDownLoad = JSON.parseObject(jObject.getString("FtpDownloadBean"),FtpDownLoad.class);
+    public ResponseCode downLoad(HttpServletRequest request){
+        FtpDownLoad ftpDownLoad = new FtpDownLoad();
         String param = getParm(request);
+        ftpDownLoad = JSON.parseObject(param,FtpDownLoad.class);
         int add = ftpDownLoadService.addDownLoad(ftpDownLoad);
         if (add == 1){
             return ResponseCode.OK();
